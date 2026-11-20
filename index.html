@@ -161,6 +161,79 @@ header.scrolled .menu-btn{color:var(--ink)}
 .band cite{display:block;margin-top:22px;font-style:normal;color:var(--mint);font-weight:600;letter-spacing:.06em}
 .band .qmark{font-family:Georgia,serif;font-size:9rem;line-height:.6;color:var(--sun);opacity:.35;display:block;margin-bottom:10px}
 
+/* featured work */
+.work{background:var(--soft)}
+.feature{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center;background:#fff;border-radius:28px;padding:44px;margin-top:40px;box-shadow:0 24px 60px rgba(11,79,74,.1);border-top:6px solid var(--sun)}
+@media (max-width:900px){.feature{grid-template-columns:1fr;padding:28px}}
+.kicker{display:block;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
+.feature h3{font-size:clamp(1.5rem,3vw,2rem)}
+.feature p{color:var(--muted)}
+.rings{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.ring{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center}
+.ring svg{width:130px;height:130px;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke:var(--mint-soft);stroke-width:10}
+.ring circle.fg{stroke:var(--deep);stroke-linecap:round;stroke-dasharray:327;stroke-dashoffset:327;transition:stroke-dashoffset 1.8s ease}
+.feature.in .ring circle.fg{stroke-dashoffset:calc(327 - 327 * var(--p) / 100)}
+.ring b{position:absolute;top:44px;left:0;right:0;font-family:Montserrat,sans-serif;font-size:1.7rem;font-weight:800;color:var(--deep)}
+.ring span{font-size:.88rem;color:var(--muted);margin-top:8px;max-width:14em}
+.ring b span.count{font-size:inherit;color:inherit;margin:0;max-width:none}
+.ring.solid{grid-column:1/-1;flex-direction:row;gap:16px;justify-content:center;background:var(--deep);border-radius:18px;padding:16px}
+.ring.solid b{position:static;color:var(--sun);font-size:2.2rem}
+.ring.solid span{color:#d4ebe7;margin:0;text-align:left;font-size:.95rem}
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+@media (max-width:900px){.work-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.work-grid{grid-template-columns:1fr}}
+.wcard{text-align:left;font:inherit;color:inherit;cursor:pointer;background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column;align-items:flex-start;transition:transform .3s,box-shadow .3s,border-color .3s}
+.wcard:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(11,79,74,.12);border-color:var(--mint)}
+.wcard p{color:var(--muted);margin:0 0 16px;font-size:.98rem}
+.wtag{display:inline-block;background:var(--mint-soft);color:var(--deep);font-weight:700;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 11px;border-radius:999px;margin-bottom:14px}
+.more{margin-top:auto;font-family:Montserrat,sans-serif;font-weight:700;color:var(--coral);font-size:.92rem}
+dialog{border:0;border-radius:24px;padding:40px;max-width:640px;width:calc(100% - 32px);box-shadow:0 30px 80px rgba(0,0,0,.35);color:var(--ink)}
+dialog::backdrop{background:rgba(6,48,45,.7);backdrop-filter:blur(4px)}
+dialog[open]{animation:pop .35s ease}
+dialog h3{font-size:1.6rem}
+dialog p{color:var(--muted)}
+.dlg-x{position:absolute;top:14px;right:14px;width:42px;height:42px;border-radius:50%;border:0;background:var(--soft);font-size:1.6rem;cursor:pointer;color:var(--deep)}
+.dlg-x:hover{background:var(--sun)}
+@media (max-width:600px){dialog{padding:28px 22px}}
+
+/* lifestyle band */
+.band h2{color:#fff}
+.band-sub{color:#cfe6e2;font-size:1.15rem;max-width:36em;margin:0 auto}
+.moments{margin-top:44px;display:grid;gap:14px}
+.mrow{overflow:hidden}
+.mtrack{display:flex;gap:14px;width:max-content;animation:marquee 55s linear infinite}
+.mrow.rev .mtrack{animation-direction:reverse}
+.moments:hover .mtrack{animation-play-state:paused}
+.mtrack span{white-space:nowrap;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:12px 22px;font-weight:600;transition:background .2s}
+.mtrack span:hover{background:var(--sun);color:var(--deeper)}
+
+/* roles */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0}
+.fbtn{font:inherit;font-weight:700;font-size:.92rem;padding:10px 18px;border-radius:999px;border:2px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:all .2s}
+.fbtn:hover{border-color:var(--deep)}
+.fbtn.active{background:var(--deep);border-color:var(--deep);color:#fff}
+.role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:900px){.role-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.role-grid{grid-template-columns:1fr}}
+.rtile{background:#fff;border:1px solid var(--line);border-left:5px solid var(--mint);border-radius:14px;padding:18px 20px;transition:transform .3s,box-shadow .3s,border-color .3s,opacity .3s}
+.rtile:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(11,79,74,.1);border-left-color:var(--sun)}
+.rtile b{display:block;font-family:Montserrat,sans-serif;font-size:.98rem;margin-bottom:4px}
+.rtile span{font-size:.92rem;color:var(--muted)}
+.rtile.hide{display:none}
+.rtile.pulse{animation:pop .4s ease}
+.toolkit{margin-top:60px;background:var(--deeper);color:#fff;border-radius:28px;padding:44px}
+@media (max-width:600px){.toolkit{padding:28px 22px}}
+.tk-head p{color:#cfe6e2;margin-top:0}
+.tk-head h3{font-size:1.6rem}
+.tk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:20px}
+@media (max-width:900px){.tk-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.tk-grid{grid-template-columns:1fr}}
+.tk-grid h4{font-family:Montserrat,sans-serif;color:var(--sun);margin:0 0 12px;font-size:.95rem;letter-spacing:.04em}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:.86rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:6px 10px;transition:background .2s}
+.chips span:hover{background:rgba(255,255,255,.18)}
+
 /* experience accordion timeline */
 .timeline{margin-top:40px;position:relative}
 .timeline::before{content:"";position:absolute;left:23px;top:0;bottom:0;width:3px;background:linear-gradient(var(--sun),var(--mint))}
@@ -278,9 +351,9 @@ svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-l
     <ul id="menu">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#research">Research</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
       <li><a class="cta" href="#contact">Let's talk</a></li>
     </ul>
   </nav>
@@ -324,10 +397,10 @@ svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-l
     <div class="eyebrow reveal">Impact</div>
     <h2 class="reveal">Results across the system</h2>
     <div class="stats">
-      <div class="stat reveal"><b><span class="count" data-to="45">0</span></b><span>superintendent portfolios supported with professional learning</span></div>
-      <div class="stat reveal d1"><b><span class="count" data-to="100">0</span>%</b><span>of my teaching-fellow cohort completed the program</span></div>
-      <div class="stat reveal d2"><b><span class="count" data-to="8">0</span></b><span>week family program for newly arrived families</span></div>
-      <div class="stat reveal d3"><b><span class="count" data-to="9">0</span></b><span>leadership honors, awards, and fellowships</span></div>
+      <div class="stat reveal"><b><span class="count" data-to="94">0</span>%</b><span>of 429 Summer Institute respondents left with actionable next steps</span></div>
+      <div class="stat reveal d1"><b><span class="count" data-to="45">0</span></b><span>superintendent portfolios supported with professional learning</span></div>
+      <div class="stat reveal d2"><b><span class="count" data-to="100">0</span>%</b><span>of my teaching-fellow cohort completed the program</span></div>
+      <div class="stat reveal d3"><b><span class="count" data-to="85">0</span>%</b><span>of students engaged through 20+ events and 15 trips a year</span></div>
     </div>
   </div>
 </section>
@@ -336,12 +409,13 @@ svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-l
 <section id="about" style="padding-top:20px">
   <div class="wrap about-grid">
     <div class="reveal">
-      <div class="eyebrow">About Luis</div>
-      <h2>Turning policy into practice, and practice into results</h2>
-      <p class="lead">I've worked at every level of New York City Public Schools: as a teacher, a World Language Department Chair, a Dean of Students, and now as a designer of system-wide professional learning alongside superintendents.</p>
+      <div class="eyebrow">My story</div>
+      <h2>From newcomer to leader</h2>
+      <p class="lead">In 2012, I arrived in the United States as an asylum seeker from El Salvador. On Long Island, my ENL teacher guided me through a new language and a new life. Her belief in me planted the seed for my career, and showed me that school can be <b>a safe harbor, a launchpad, and a source of empowerment.</b></p>
+      <p>Since then, I've worked at every level of New York City Public Schools: as a Spanish teacher who designed three curricula (Spanish 1, Native Spanish, and AP Spanish), a Department Chair, a Coordinator of Student Life, a Dean of Students, and now a designer of system-wide professional learning alongside superintendents.</p>
     </div>
     <div class="reveal d1">
-      <p>My approach is data-informed, collaborative, and systems-oriented. I help leaders turn big priorities into coherent, lasting practice in classrooms, schools, and communities.</p>
+      <p>I see my own story in the students and families I serve. It shapes my belief that education must be <b>rigorous, inclusive, and deeply human</b>. My approach is data-informed, collaborative, and systems-oriented, and I help leaders turn big priorities into coherent, lasting practice.</p>
       <div class="values">
         <div class="value"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18M3 12h18"/></svg></div><div><b>Equity-centered</b><span>Every decision starts with who's being served</span></div></div>
         <div class="value"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div><div><b>Data-informed</b><span>Continuous improvement built in</span></div></div>
@@ -423,11 +497,120 @@ svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-l
   </div>
 </section>
 
-<!-- QUOTE BAND -->
-<section class="band on-dark">
+<!-- FEATURED WORK -->
+<section id="work" class="work">
+  <div class="wrap">
+    <div class="eyebrow reveal">Featured work</div>
+    <h2 class="reveal">Professional learning I've designed and led</h2>
+    <p class="lead reveal">A few examples from my portfolio. Click any card to read more.</p>
+
+    <div class="feature reveal">
+      <div class="feature-text">
+        <span class="kicker">Case study · NYC Public Schools, Office of Student Pathways</span>
+        <h3>2026 Pathways Summer Institute</h3>
+        <p>As project manager, I brought central, district, and school teams together around one goal: helping schools turn Pathways priorities into practice. I shaped the whole learning experience, from design principles and session guidance to facilitator preparation and implementation planning tools, and partnered with district leaders so school teams had time to plan together.</p>
+        <p>I treated the Institute as the beginning of our support, not the end. I gathered feedback from participants, facilitators, and district teams and used it to shape professional learning across the school year.</p>
+      </div>
+      <div class="rings">
+        <div class="ring" style="--p:94"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52"/><circle class="fg" cx="60" cy="60" r="52"/></svg><b><span class="count" data-to="94">0</span>%</b><span>left with actionable next steps for the fall</span></div>
+        <div class="ring" style="--p:97"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52"/><circle class="fg" cx="60" cy="60" r="52"/></svg><b><span class="count" data-to="97">0</span>%</b><span>said it helped their school team learn together</span></div>
+        <div class="ring solid"><b><span class="count" data-to="429">0</span></b><span>participant survey respondents</span></div>
+      </div>
+    </div>
+
+    <div class="work-grid">
+      <button class="wcard reveal" data-dlg>
+        <span class="wtag">School leaders</span>
+        <h3>GenConnect Principal's PD</h3>
+        <p>Equipping principals to bring a family-engagement program for multilingual learners to their schools.</p>
+        <span class="more">Read more &rarr;</span>
+        <div class="full" hidden>
+          <p>I designed and facilitated a professional development session for principals and school leaders to introduce the GenConnect program and support its implementation in NYC Public Schools. I presented the program's vision, goals, and curriculum, highlighting how it fosters culturally responsive-sustaining education and strengthens family engagement for multilingual learners.</p>
+          <p>I led principals through an interactive walkthrough of the eight-session model, shared best practices for recruiting families, and guided leaders in aligning the program with their school improvement goals. Leaders left with a clear understanding of the timeline, recruitment expectations, and how the program supports multilingual learner success and whole-child development.</p>
+        </div>
+      </button>
+      <button class="wcard reveal d1" data-dlg>
+        <span class="wtag">Whole staff</span>
+        <h3>The First Two Days: Back-to-School PD</h3>
+        <p>Two days that moved a staff from shared vision to ready-to-use plans.</p>
+        <span class="more">Read more &rarr;</span>
+        <div class="full" hidden>
+          <p><b>Day 1: Vision, culture, and collaboration.</b> Staff revisited the school's mission and core values, took part in team-building, and aligned on expectations for instruction, student engagement, and school-wide norms, leaving with a shared sense of purpose.</p>
+          <p><b>Day 2: Instructional focus and planning for success.</b> Sessions on challenge-based learning, differentiation, and classroom management, plus time for grade teams and co-teaching partners to design lessons and routines, so teachers started the year with clarity and confidence.</p>
+        </div>
+      </button>
+      <button class="wcard reveal d2" data-dlg>
+        <span class="wtag">School culture</span>
+        <h3>Communication Models PD</h3>
+        <p>Practical protocols for collaboration, conflict, and courageous conversations.</p>
+        <span class="more">Read more &rarr;</span>
+        <div class="full" hidden>
+          <p>I designed and facilitated a session introducing four communication frameworks: Dyads, Venting Protocols, Courageous Conversations, and Learning Conversations, with practical strategies for using each to improve collaboration, resolve conflict, and strengthen relationships.</p>
+          <p>I modeled each protocol, engaged staff in role-play, and created space to practice active listening, giving and receiving feedback, and navigating difficult conversations with empathy. The goal: psychological safety, trust among colleagues, and a culture of open dialogue.</p>
+        </div>
+      </button>
+      <button class="wcard reveal" data-dlg>
+        <span class="wtag">Youth leadership</span>
+        <h3>Vision Casting for PRHYLI</h3>
+        <p>Helping advisors and student leaders set the direction for the Puerto Rican/Hispanic Youth Leadership Institute.</p>
+        <span class="more">Read more &rarr;</span>
+        <div class="full" hidden>
+          <p>I led advisors and student leaders through a structured process of reflecting on the institute's mission, identifying shared values, and setting ambitious yet achievable goals for the year.</p>
+          <p>Together we mapped program priorities, aligned student-led initiatives with legislative and civic engagement objectives, and built action steps so students could own their learning and leadership, amplifying Hispanic youth voices and strengthening the institute's legacy.</p>
+        </div>
+      </button>
+      <button class="wcard reveal d1" data-dlg>
+        <span class="wtag">Support staff</span>
+        <h3>Paraprofessional Expectations PD</h3>
+        <p>Making paraprofessionals active partners in teaching and learning.</p>
+        <span class="more">Read more &rarr;</span>
+        <div class="full" hidden>
+          <p>I designed a session clarifying paraprofessionals' roles and responsibilities, with an overview of instructional support strategies, behavior management techniques, and collaboration practices with lead teachers.</p>
+          <p>Participants discussed classroom presence, proactive communication, and fostering student independence while meeting IEP and 504 requirements. I also shared tools for data collection and documentation, so paraprofessionals could contribute meaningfully to progress monitoring and stronger classroom teams.</p>
+        </div>
+      </button>
+      <button class="wcard reveal d2" data-dlg>
+        <span class="wtag">Families</span>
+        <h3>Spanish College Workshops</h3>
+        <p>Breaking down language barriers on the road to college.</p>
+        <span class="more">Read more &rarr;</span>
+        <div class="full" hidden>
+          <p>I create and facilitate sessions in Spanish for families to learn about the college application process, financial aid, and scholarship opportunities.</p>
+          <p>The goal is to make sure every family, regardless of language background, can actively support their student's college journey.</p>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<dialog id="dlg" aria-labelledby="dlg-title">
+  <button class="dlg-x" aria-label="Close">&times;</button>
+  <span class="wtag" id="dlg-tag"></span>
+  <h3 id="dlg-title"></h3>
+  <div id="dlg-body"></div>
+  <a class="btn btn-deep" href="#contact" id="dlg-cta">Bring this to your team <span class="arr">&rarr;</span></a>
+</dialog>
+
+<!-- LIFESTYLE BAND -->
+<section class="band on-dark" id="lifestyle">
   <div class="wrap reveal">
+    <div class="eyebrow">Beyond the classroom</div>
+    <h2>Education as a lifestyle, not a career</h2>
+    <p class="band-sub">School culture isn't built in classrooms alone. It's built in shared moments of connection, celebration, and community service.</p>
+  </div>
+  <div class="moments" aria-label="Moments from my work">
+    <div class="mrow"><div class="mtrack">
+      <span>🏠 Home visits</span><span>⛰️ Leadership retreats</span><span>🏛️ PRHYLI weekend in Albany</span><span>🏂 Snowboarding trips</span><span>🏕️ Camping trips</span><span>🎉 Hispanic Heritage celebrations</span><span>💀 Día de los Muertos</span><span>✊🏿 Black History Month celebration</span><span>🏳️‍🌈 Pride celebrations</span><span>🎓 Graduations</span><span>🤝 Community Action Day</span><span>♟️ Chess tournament</span>
+      <span aria-hidden="true">🏠 Home visits</span><span aria-hidden="true">⛰️ Leadership retreats</span><span aria-hidden="true">🏛️ PRHYLI weekend in Albany</span><span aria-hidden="true">🏂 Snowboarding trips</span><span aria-hidden="true">🏕️ Camping trips</span><span aria-hidden="true">🎉 Hispanic Heritage celebrations</span><span aria-hidden="true">💀 Día de los Muertos</span><span aria-hidden="true">✊🏿 Black History Month celebration</span><span aria-hidden="true">🏳️‍🌈 Pride celebrations</span><span aria-hidden="true">🎓 Graduations</span><span aria-hidden="true">🤝 Community Action Day</span><span aria-hidden="true">♟️ Chess tournament</span>
+    </div></div>
+    <div class="mrow rev"><div class="mtrack">
+      <span>💼 Virtual student job interviews</span><span>🏢 Summer internships</span><span>🏫 High school fairs</span><span>🎨 Arts &amp; craft night</span><span>🏁 Amazing Race</span><span>📣 Spirit Week</span><span>⛸️ Ice skating</span><span>🎬 Movie festival</span><span>🎓 College trips</span><span>👨‍👩‍👧 Family Fest &amp; parent nights</span><span>💃 Senior prom</span><span>🏆 Teacher Awards Night</span>
+      <span aria-hidden="true">💼 Virtual student job interviews</span><span aria-hidden="true">🏢 Summer internships</span><span aria-hidden="true">🏫 High school fairs</span><span aria-hidden="true">🎨 Arts &amp; craft night</span><span aria-hidden="true">🏁 Amazing Race</span><span aria-hidden="true">📣 Spirit Week</span><span aria-hidden="true">⛸️ Ice skating</span><span aria-hidden="true">🎬 Movie festival</span><span aria-hidden="true">🎓 College trips</span><span aria-hidden="true">👨‍👩‍👧 Family Fest &amp; parent nights</span><span aria-hidden="true">💃 Senior prom</span><span aria-hidden="true">🏆 Teacher Awards Night</span>
+    </div></div>
+  </div>
+  <div class="wrap reveal" style="margin-top:60px">
     <span class="qmark">&ldquo;</span>
-    <blockquote>I lead with a commitment to <em>coherence</em>, <em>sustainability</em>, and ensuring that every student has access to opportunity and academic excellence.</blockquote>
+    <blockquote>Teaching is not a job; it is a <em>lifelong calling</em>. Education is a way of living: shaping minds, inspiring hearts, and modeling the very curiosity and growth we hope to see in our students.</blockquote>
     <cite>LUIS GUERRERO-REYES</cite>
   </div>
 </section>
@@ -482,6 +665,60 @@ svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-l
           <li>Facilitated Goal-Oriented Learning Development (GOLD) for students with disabilities</li>
           <li><b>Named Core Educator of the Year</b></li>
         </ul></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROLES + TOOLKIT -->
+<section id="roles" style="padding-top:20px">
+  <div class="wrap">
+    <div class="eyebrow reveal">Roles I've served in</div>
+    <h2 class="reveal"><span class="count" data-to="23">0</span> roles, one mission</h2>
+    <p class="lead reveal">Beyond my job titles, I've taken on roles across every part of school life. Filter by area to explore.</p>
+    <div class="filters reveal" role="group" aria-label="Filter roles">
+      <button class="fbtn active" data-f="all">All</button>
+      <button class="fbtn" data-f="culture">Culture &amp; student life</button>
+      <button class="fbtn" data-f="support">Student support</button>
+      <button class="fbtn" data-f="family">Family &amp; community</button>
+      <button class="fbtn" data-f="ops">Talent &amp; operations</button>
+    </div>
+    <div class="role-grid" id="roleGrid">
+      <div class="rtile" data-c="culture"><b>Coordinator of Student Affairs</b><span>Planned 20+ events and 15 trips a year, engaging over 85% of students and nearly half of families</span></div>
+      <div class="rtile" data-c="culture"><b>Student Government Advisor</b><span>Coached student leaders through service projects, spirit events, and advocacy campaigns</span></div>
+      <div class="rtile" data-c="culture"><b>Restorative Justice Founding Member</b><span>Co-facilitated circles and mediations that repair harm and rebuild trust</span></div>
+      <div class="rtile" data-c="culture"><b>CHILL Program Coordinator</b><span>Led SEL and mindfulness programming, including a week-long Vermont trip and weekly ski and snowboard outings</span></div>
+      <div class="rtile" data-c="culture"><b>9th Grade Advisory Coordinator</b><span>Designed a year-long advisory curriculum and trained advisory teachers</span></div>
+      <div class="rtile" data-c="culture"><b>Newspaper Founding Advisor</b><span>Built the school newspaper from the ground up to amplify student voices</span></div>
+      <div class="rtile" data-c="support"><b>504 Coordinator</b><span>Developed and monitored Section 504 plans so students with disabilities could fully access learning</span></div>
+      <div class="rtile" data-c="support"><b>Seal of Biliteracy Coordinator</b><span>Guided students to earn the NYS Seal of Biliteracy, celebrating bilingualism as an asset</span></div>
+      <div class="rtile" data-c="support"><b>Summer Credit Recovery Coordinator</b><span>Built individualized plans to get off-track students back on the path to graduation</span></div>
+      <div class="rtile" data-c="support"><b>Summer School Co-Coordinator</b><span>Designed and ran summer programming and supported planning for the new school year</span></div>
+      <div class="rtile" data-c="support"><b>Saturday Academy Teacher</b><span>Targeted literacy, writing, and Regents preparation to close learning gaps</span></div>
+      <div class="rtile" data-c="support"><b>Co-Op Student Workers Coordinator</b><span>Connected students with work-based learning and mentored them in professionalism</span></div>
+      <div class="rtile" data-c="family"><b>Home Visits Coordinator</b><span>Organized visits to re-engage students and welcomed every incoming 9th grader's family</span></div>
+      <div class="rtile" data-c="family"><b>Spanish College Workshop Liaison</b><span>Led college, financial aid, and scholarship workshops for families in Spanish</span></div>
+      <div class="rtile" data-c="family"><b>GenConnect Facilitator</b><span>Led intergenerational workshops connecting students, families, and mentors</span></div>
+      <div class="rtile" data-c="family"><b>PRHYLI Trainer</b><span>Prepared NYC student cohorts to present policy proposals at the NYS Assembly/Senate conference</span></div>
+      <div class="rtile" data-c="family"><b>Student Recruitment Coordinator</b><span>Represented two schools at fairs, open houses, and family events</span></div>
+      <div class="rtile" data-c="ops"><b>NYC Teaching Fellows Lead Instructor</b><span>Trained, observed, and coached new teachers toward the NYS Teaching Standards</span></div>
+      <div class="rtile" data-c="ops"><b>Hiring Committee Lead</b><span>Ran recruitment and interviews to bring in mission-aligned educators</span></div>
+      <div class="rtile" data-c="ops"><b>School Leadership Team Secretary</b><span>Tracked progress toward Comprehensive Education Plan goals and kept stakeholders informed</span></div>
+      <div class="rtile" data-c="ops"><b>Principal's Compliance Designee</b><span>Kept the school aligned with NYCPS regulations, from IEPs to safety procedures</span></div>
+      <div class="rtile" data-c="ops"><b>Substitute Teacher Coordinator</b><span>Kept instruction continuous by preparing substitutes with plans and tools</span></div>
+      <div class="rtile" data-c="ops"><b>World Language Department Chair</b><span>Led the department and designed three Spanish curricula aligned to NYS standards</span></div>
+    </div>
+
+    <div class="toolkit reveal">
+      <div class="tk-head">
+        <h3>Nearly 50 systems and tools I've built</h3>
+        <p>Practical resources from my portfolio that keep schools running and help people do their best work.</p>
+      </div>
+      <div class="tk-grid">
+        <div><h4>Culture &amp; policy</h4><div class="chips"><span>Student Code of Conduct</span><span>Cell Phone Policy &amp; Collection Plan</span><span>Hall Pass System</span><span>9th Grade Culture Reset</span><span>Student Locker Contract</span><span>Gotham Gathering Initiative</span></div></div>
+        <div><h4>Instruction &amp; PD</h4><div class="chips"><span>New Staff Institute</span><span>Instructional Focus Visual</span><span>Student Perception Data PD</span><span>Co-Teaching Agreement</span><span>Initial Planning Conferences</span><span>Emergency Lesson Plan Template</span></div></div>
+        <div><h4>Students &amp; families</h4><div class="chips"><span>Class of 2028 Home Visits</span><span>Parent Engagement Log</span><span>504 Tracker &amp; Family Letter</span><span>Seal of Biliteracy Tracker</span><span>Recruitment Plan, Class of 2030</span><span>Attendance Solutions</span></div></div>
+        <div><h4>Operations</h4><div class="chips"><span>Event Planning System</span><span>Compliance Tracker</span><span>Trips Guide</span><span>School Space Guide</span><span>CTE Re-Approval</span><span>Foundation Grant Application</span></div></div>
       </div>
     </div>
   </div>
@@ -671,6 +908,26 @@ svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-l
   document.getElementById('next').onclick = () => {
     if (car.scrollLeft + car.clientWidth >= car.scrollWidth - 5) car.scrollTo({left:0}); else car.scrollBy({left:step()});
   };
+
+  // work cards -> dialog
+  const dlg = document.getElementById('dlg');
+  document.querySelectorAll('[data-dlg]').forEach(c => c.addEventListener('click', () => {
+    document.getElementById('dlg-tag').textContent = c.querySelector('.wtag').textContent;
+    document.getElementById('dlg-title').textContent = c.querySelector('h3').textContent;
+    document.getElementById('dlg-body').innerHTML = c.querySelector('.full').innerHTML;
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
+  }));
+  dlg.querySelector('.dlg-x').onclick = () => dlg.close();
+  document.getElementById('dlg-cta').onclick = () => dlg.close();
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+  // role filters
+  const tiles = [...document.querySelectorAll('.rtile')];
+  document.querySelectorAll('.fbtn').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.fbtn').forEach(x => x.classList.toggle('active', x === b));
+    const f = b.dataset.f;
+    tiles.forEach(t => { const show = f === 'all' || t.dataset.c === f; t.classList.toggle('hide', !show); t.classList.remove('pulse'); if (show) { void t.offsetWidth; t.classList.add('pulse'); } });
+  }));
 
   // contact form -> email
   document.getElementById('contactForm').addEventListener('submit', e => {
